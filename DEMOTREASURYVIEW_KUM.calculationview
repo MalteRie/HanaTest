@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="DEMOTREASURYVIEW_KUM" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="Kumulierte Daten pro Tag"/>
+  <metadata changedAt="2018-02-23 10:27:06.541"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="5"/>
+  <dataSources>
+    <DataSource id="DemoDataTreasury7Kum" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="DemoDataTreasury7Kum">
+    <descriptions/>
+    <attributes>
+      <attribute id="Date" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Date"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="Deutsche_Bank" order="2" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Deutsche Bank"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Deutsche Bank"/>
+      </measure>
+      <measure id="Sparkasse" order="3" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Sparkasse"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Sparkasse"/>
+      </measure>
+      <measure id="Volksbank" order="4" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Volksbank"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Volksbank"/>
+      </measure>
+      <measure id="Aerospace" order="5" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Aerospace"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Aerospace"/>
+      </measure>
+      <measure id="Automotive" order="6" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Automotive"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Automotive"/>
+      </measure>
+      <measure id="Engineering" order="7" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Engineering"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Engineering"/>
+      </measure>
+      <measure id="Logistics" order="8" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="Logistics"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="Logistics"/>
+      </measure>
+      <measure id="CHF" order="9" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="CHF"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="CHF"/>
+      </measure>
+      <measure id="EUR" order="10" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="EUR"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="EUR"/>
+      </measure>
+      <measure id="GBP" order="11" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="GBP"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="GBP"/>
+      </measure>
+      <measure id="USD" order="12" aggregationType="max" measureType="simple">
+        <descriptions defaultDescription="USD"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7Kum" columnName="USD"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

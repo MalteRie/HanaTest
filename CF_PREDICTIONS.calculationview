@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CF_PREDICTIONS" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="CF_PREDICTIONS"/>
+  <metadata changedAt="2018-07-23 21:20:04.635"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="CF_Predictions2" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="S4TAGETIK" columnObjectName="CF_Predictions2"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="CF_Predictions2">
+    <descriptions/>
+    <attributes>
+      <attribute id="CASH_IN_PERIOD" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Cash In Period"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="CASH_IN_PERIOD"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="CASH_IN_REAL" order="2" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="ACT Cash In"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="CASH_IN_REAL"/>
+      </measure>
+      <measure id="CASH_IN_PREDICTION" order="3" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="FC Cash In"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="CASH_IN_PREDICTION"/>
+      </measure>
+      <measure id="DELTA" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Delta"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="DELTA"/>
+      </measure>
+      <measure id="%DELTA" order="5" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="%Delta"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="%DELTA"/>
+      </measure>
+      <measure id="%DELTA_ABS" order="6" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="%Delta Absolut"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="%DELTA_ABS"/>
+      </measure>
+      <measure id="%DELTA_1YEAR" order="7" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="%Delta YTD"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Predictions2" columnName="%DELTA_1YEAR"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

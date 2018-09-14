@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CF_INFLUENCE" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="CF_INFLUENCE"/>
+  <metadata changedAt="2018-07-24 21:40:53.837"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="CF_Influence" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="S4TAGETIK" columnObjectName="CF_Influence"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="CF_Influence">
+    <descriptions/>
+    <attributes>
+      <attribute id="Feature" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="CF_Influence" columnName="Feature"/>
+      </attribute>
+      <attribute id="Value" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="CF_Influence" columnName="Value"/>
+      </attribute>
+      <attribute id="Period" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="CF_Influence" columnName="Period"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="Influence_On_Target" order="4" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription=" Influence on Target"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_Influence" columnName="InfluenceOnTarget"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

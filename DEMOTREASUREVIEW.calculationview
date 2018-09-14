@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="DEMOTREASUREVIEW" deprecated="true" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="DEMOTREASUREVIEW"/>
+  <metadata changedAt="2018-02-22 16:33:58.982"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="20"/>
+  <dataSources>
+    <DataSource id="DemoDataTreasury7" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="DemoDataTreasury7">
+    <descriptions/>
+    <attributes>
+      <attribute id="ID" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unique ID"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="ID"/>
+      </attribute>
+      <attribute id="FiscalYear" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Year"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="FiscalYear"/>
+      </attribute>
+      <attribute id="DRCRK" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Debit / Credit Indicator"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="DRCRK"/>
+      </attribute>
+      <attribute id="BankAccount" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Bank"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="BankAccount"/>
+      </attribute>
+      <attribute id="Division" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Division"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="Division"/>
+      </attribute>
+      <attribute id="TransactionCurrency" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transcation Currency"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="TransactionCurrency"/>
+      </attribute>
+      <attribute id="GroupCurrency" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Group Currency"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="GroupCurrency"/>
+      </attribute>
+      <attribute id="FiscalPeriod" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Period"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="FiscalPeriod"/>
+      </attribute>
+      <attribute id="Day" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Day"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="Day"/>
+      </attribute>
+      <attribute id="Date" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Date"/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="Date"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="ValueTransactionCurrency" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Value in Transaction Currency"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="ValueTransactionCurrency"/>
+      </measure>
+      <measure id="FX_Rate_USD" order="8" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="Exchange Rate USD"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="FX_Rate_USD"/>
+      </measure>
+      <measure id="FX_Rate_CHF" order="9" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="Exchange Rate CHF"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="FX_Rate_CHF"/>
+      </measure>
+      <measure id="FX_Rate_GBP" order="10" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions defaultDescription="Exchange Rate GBP"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="FX_Rate_GBP"/>
+      </measure>
+      <measure id="ValueGroupCurrency" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Value in Group Currency"/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="DemoDataTreasury7" columnName="ValueGroupCurrency"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

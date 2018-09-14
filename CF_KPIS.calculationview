@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CF_KPIS" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="CF_KPIS"/>
+  <metadata changedAt="2018-07-27 14:10:34.049"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="CF_KPIS" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="S4TAGETIK" columnObjectName="CF_KPIS"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="CF_KPIS">
+    <descriptions/>
+    <attributes>
+      <attribute id="Period" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions/>
+        <keyMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="Iteration"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="R2_ML" order="1" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="ML_R2"/>
+      </measure>
+      <measure id="MAE_ML" order="2" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="ML_MAE"/>
+      </measure>
+      <measure id="MAE_Benchmark" order="3" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="B_MAE"/>
+      </measure>
+      <measure id="Delta" order="4" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="DELTA"/>
+      </measure>
+      <measure id="Delta_Relative" order="5" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="%DELTA"/>
+      </measure>
+      <measure id="MSE_ML" order="6" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="ML_MSE"/>
+      </measure>
+      <measure id="MSE_Benchmark" order="7" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="B_MSE"/>
+      </measure>
+      <measure id="RMSE_ML" order="8" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="ML_RMSE"/>
+      </measure>
+      <measure id="RMSE_Benchmark" order="9" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="B_RMSE"/>
+      </measure>
+      <measure id="Days_Until_Cash_In" order="10" aggregationType="sum" engineAggregation="avg" measureType="simple">
+        <descriptions/>
+        <measureMapping schemaName="S4TAGETIK" columnObjectName="CF_KPIS" columnName="DaysUntilCashIn"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
